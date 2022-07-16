@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#82B1FF"
+    tools:context=".NewAppointmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_doctorinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--android:orientation="vertical"
+        android:padding="7dp">-->
+
+        <ImageView
+            android:id="@+id/imgview_doctor"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtview_doctorName"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:text="DR KALA A/P MUTHUKUMARU"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toEndOf="@+id/imgview_doctor"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtview_doctorSpeciality"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:text="Allied Health - Psychology"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+            app:layout_constraintStart_toEndOf="@+id/imgview_doctor"
+            app:layout_constraintTop_toBottomOf="@+id/txtview_doctorName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtSelectADate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_doctorinfo"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:text="Select a date"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layoutCalendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtSelectADate"
+        android:layout_centerHorizontal="true">
+
+        <CalendarView
+            android:id="@+id/dateCalendarView"
+            android:layout_width="300dp"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:firstDayOfWeek="1"
+            android:minDate="07/01/2022"
+            android:maxDate="08/01/2022"
+            ></CalendarView>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutCalendarView"
+        android:layout_marginTop="10dp">
+
+        <!--        android:layout_below="@+id/layoutCalendarView"-->
+        <!--        android:layout_marginTop="30dp"-->
+        <TextView
+            android:id="@+id/txtSelectATime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Select a time"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timeTextClock1"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txtSelectATime"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="9.00AM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock12"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelectATime" />
+
+        <TextView
+            android:id="@+id/timeTextClock2"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txtSelectATime"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/timeTextClock1"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="9.30AM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock3"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelectATime" />
+
+        <TextView
+            android:id="@+id/timeTextClock3"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txtSelectATime"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/timeTextClock2"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="10.00AM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelectATime" />
+
+        <TextView
+            android:id="@+id/timeTextClock4"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txtSelectATime"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/timeTextClock3"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="10.30AM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock3"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelectATime" />
+
+        <TextView
+            android:id="@+id/timeTextClock5"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txtSelectATime"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/timeTextClock4"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="11.00AM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock4"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelectATime" />
+
+        <TextView
+            android:id="@+id/timeTextClock6"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="11.30AM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock7"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock1" />
+
+        <TextView
+            android:id="@+id/timeTextClock7"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock1"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/timeTextClock6"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="12.00PM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock8"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock3" />
+
+        <TextView
+            android:id="@+id/timeTextClock8"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock3"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock7"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="12.30PM"
+            android:textColor="@color/black"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock3" />
+
+        <TextView
+            android:id="@+id/timeTextClock9"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock8"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="1.00PM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock8"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock3" />
+
+        <TextView
+            android:id="@+id/timeTextClock10"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock9"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="1.30PM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock9"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock3" />
+
+        <TextView
+            android:id="@+id/timeTextClock11"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock6"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="2.00PM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock12"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock8" />
+
+        <TextView
+            android:id="@+id/timeTextClock12"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock6"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/timeTextClock11"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="2.30PM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/timeTextClock13"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock8" />
+
+        <TextView
+            android:id="@+id/timeTextClock13"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock8"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock12"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="3.00PM"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock8" />
+
+        <TextView
+            android:id="@+id/timeTextClock14"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock6"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock13"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="3.30PM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock13"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock8" />
+
+        <TextView
+            android:id="@+id/timeTextClock15"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/timeTextClock6"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/timeTextClock14"
+            android:background="#8BC34A"
+            android:gravity="center"
+            android:text="4.00PM"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/timeTextClock14"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextClock8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/layout_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="3dp"
+        android:text="Confirm"
+        android:textSize="20dp" />
+
+</RelativeLayout>
